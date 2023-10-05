@@ -16,19 +16,23 @@ library(celldex)
 seurat_integrated <- readRDS("results/integrated_seurat_singlets.rds")
 DimPlot(seurat_integrated, reduction = "umap", label = TRUE, pt.size = .1)
 
-# Cell annotation
+# Cell annotation using SingleR
 mo_ref <- celldex::MouseRNAseqData()
 cell_cluster <- SingleR(test = as.SingleCellExperiment(seurat_integrated),ref = mo_ref, labels = mo_ref$label.main)
 
+# Display the counts of cells in each pruned label category
 table(cell_cluster$pruned.labels)
 
+# Assign the cell_cluster labels to the seurat_integrated object
 seurat_integrated$cell_cluster <- cell_cluster$pruned.labels
 
+# Create a dimensional plot using UMAP reduction, grouping by 'cell_cluster' with labels
 DimPlot(seurat_integrated, reduction = "umap", group.by = 'cell_cluster', label = T)
 
+# Check the length of active.ident in seurat_integrated
+# This gives the number of cells after removing 'NA' cell cluster labels
 
 seurat_integrated <- subset(seurat_integrated, cell_cluster != 'NA')
-
 length(seurat_integrated@active.ident)
 # 14966
 
@@ -41,7 +45,10 @@ colors = c('#de71b4', '#44AA99','#a5ccc6','#f0aac4','#5b78eb','#332288','#b36f98
            '#eb7b6e','#f03924','#5a857e','#DDCC77','#e89f74','#325c59','#999933','#b28ed4','#ad05ab','#1d33de',
            '#3d303d','#2f3635','#1b695d','#b0386a','#b86a8b','#6475f5','#44a7bd','#6bb1d6','#ff85b8')
 
-DimPlot(seu_obj,cols = colors, pt.size = 0.1, label = F, label.size = 3)
+DimPlot(seu_obj, pt.size = 0.1, label = F, label.size = 3)
+
+# Check the length of active.ident in seu_obj
+# This gives the number of cells in seu_obj
 
 length(seu_obj@active.ident)
 # 10995
