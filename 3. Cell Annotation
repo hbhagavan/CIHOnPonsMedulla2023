@@ -41,10 +41,6 @@ length(seurat_integrated@active.ident)
 
 seu_obj <- readRDS("./results_inuse/clean_seu_obj_close.rds")
 
-colors = c('#de71b4', '#44AA99','#a5ccc6','#f0aac4','#5b78eb','#332288','#b36f98','#54bbde','#f28fb8','#f28f8f',
-           '#eb7b6e','#f03924','#5a857e','#DDCC77','#e89f74','#325c59','#999933','#b28ed4','#ad05ab','#1d33de',
-           '#3d303d','#2f3635','#1b695d','#b0386a','#b86a8b','#6475f5','#44a7bd','#6bb1d6','#ff85b8')
-
 DimPlot(seu_obj, pt.size = 0.1, label = F, label.size = 3)
 
 # Check the length of active.ident in seu_obj
