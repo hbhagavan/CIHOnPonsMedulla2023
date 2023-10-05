@@ -1,5 +1,5 @@
 # title: 2. Batch Correction and Integration
-# author: Hemalatha Bhagavan, PhD
+# author: Hemalatha Bhagavan, PhD [Center for Integrative Brain Research, Seattle Children’s Research Institute]
 
 # load library
 library(SingleCellExperiment)
