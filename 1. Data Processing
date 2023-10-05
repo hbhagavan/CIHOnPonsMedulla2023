@@ -70,14 +70,11 @@ merged_seurat <- merge(x = CIH_C1_soupX_filt,
 
 # Find mitochondrial genes and calculate percent mitochondrial content
 # Plot some quality control metrics
-```{r out.width = "60%", fig.cap= "Fig. QC1"}
-#finds MT genes which is 13 expected
+# Finds MT genes, 13 expected
 grep("^mt-", rownames(merged_seurat), value = TRUE)
 
 #calculating percent mito
 merged_seurat[["percent.mt"]]<- PercentageFeatureSet(merged_seurat, pattern ="^mt-")
-
-
 
 VlnPlot(merged_seurat, c("nCount_RNA", "nFeature_RNA", "percent.mt"), group.by = "sample_id",
         pt.size = 0)
@@ -85,10 +82,10 @@ VlnPlot(merged_seurat, c("nCount_RNA", "nFeature_RNA", "percent.mt"), group.by =
 # Filter cells based on specified criteria
 filtered_seurat <- subset(merged_seurat, subset = nFeature_RNA > 1500 & nFeature_RNA < 5500 & percent.mt < 2)
 
+# split the merged files by sample_id
 split_seurat <- SplitObject(filtered_seurat, split.by = "sample_id")
 
 # Load required libraries
-
 library(parallel) 
 library(DoubletFinder)
 
