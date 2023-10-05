@@ -1,5 +1,5 @@
-#title: 3. Cell Annotation
-#author: Hemalatha Bhagavan [Center for Integrative Brain Research, Seattle Children’s Research Institute, 1900 9th Ave, Seattle, WA, USA, hema.bhagavan@seattlechildrens.org] [![](https://orcid.org/sites/default/files/images/orcid_16x16.png)](https://orcid.org/0000-0002-7206-0593)
+# title: 3. Cell Annotation
+# author: Hemalatha Bhagavan, PhD [Center for Integrative Brain Research, Seattle Children’s Research Institute]
 
 # load library
 library(Seurat)
