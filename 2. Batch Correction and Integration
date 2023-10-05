@@ -61,3 +61,5 @@ seurat_integrated <- RunUMAP(seurat_integrated, reduction = "pca", dims = 1:20)
 PCAPlot(seurat_integrated,split.by = "condition")
 DimPlot(seurat_integrated, label = TRUE) + NoLegend()
 DimPlot(seurat_integrated, split.by = "condition")
+
+# save the file
