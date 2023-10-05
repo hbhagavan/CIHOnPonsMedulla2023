@@ -14,7 +14,7 @@ library(cowplot)
 library(RCurl)
 library(ggplot2)
 library(sctransform)
-library(dittoSeq)
+
 
 #load SCT
 norm_seurat <- readRDS("processed_data_DEA/normalized_splitseurat.rds")
