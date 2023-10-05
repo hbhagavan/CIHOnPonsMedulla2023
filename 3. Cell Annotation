@@ -53,4 +53,4 @@ DimPlot(seu_obj, pt.size = 0.1, label = F, label.size = 3)
 length(seu_obj@active.ident)
 # 10995
 
-# save
+# save the data file
