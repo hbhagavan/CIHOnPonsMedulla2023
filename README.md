@@ -1,4 +1,4 @@
-Code for the mannuscript
+Code for the manuscript
 
 **Chronic intermittent hypoxia elicits distinct transcriptomic responses among excitatory neurons, inhibitory neurons, and oligodendrocytes within the brainstem of adult mice.**
 
