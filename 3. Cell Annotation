@@ -36,7 +36,7 @@ seurat_integrated <- subset(seurat_integrated, cell_cluster != 'NA')
 length(seurat_integrated@active.ident)
 # 14966
 
-# Misidentified nuclei in the cell class clusters were excluded from the analysis
+# Only the nuclei that matched the cell class identity were retained
 # Final cells used for all the downstream analysis
 
 seu_obj <- readRDS("./results_inuse/clean_seu_obj_close.rds")
